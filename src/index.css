@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-prime-100 text-slate-700 antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body[dir="rtl"] {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-slate-900 tracking-tight;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-stone-100; }
+  ::-webkit-scrollbar-thumb { @apply bg-stone-300 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-stone-400; }
+}
+
+@layer components {
+  /* Navbar — semi-transparent, warm shadow */
+  .glass-header {
+    @apply bg-white/90 backdrop-blur-lg border-b border-stone-200/60 sticky top-0 z-50 shadow-sm;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-5 py-2.5 rounded-xl font-semibold text-sm text-white
+           bg-prime-500 hover:bg-prime-600
+           shadow-md shadow-prime-500/20
+           active:scale-[.97] transition-all duration-150
+           outline-none focus-visible:ring-2 focus-visible:ring-prime-400 focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           px-5 py-2.5 rounded-xl font-semibold text-sm
+           bg-transparent text-slate-600 border border-stone-200
+           hover:bg-stone-100 hover:border-stone-300
+           active:scale-[.97] transition-all duration-150
+           outline-none focus-visible:ring-2 focus-visible:ring-slate-300 focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Inputs */
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-lg text-sm
+           border border-stone-200 bg-white text-slate-800
+           placeholder:text-slate-400
+           focus:outline-none focus:border-prime-400 focus:ring-2 focus:ring-prime-400/20
+           transition-all duration-150;
+  }
+
+  /* Product card */
+  .card {
+    @apply bg-white rounded-2xl border border-stone-200/70
+           shadow-sm hover:shadow-lg hover:-translate-y-0.5
+           transition-all duration-300 overflow-hidden;
+  }
+
+  /* Badge */
+  .badge-green {
+    @apply text-[10px] uppercase tracking-wide font-bold
+           px-2.5 py-1 rounded-full
+           bg-emerald-50 text-emerald-700 ring-1 ring-emerald-400/30;
+  }
+  .badge-red {
+    @apply text-[10px] uppercase tracking-wide font-bold
+           px-2.5 py-1 rounded-full
+           bg-red-50 text-red-600 ring-1 ring-red-400/30;
+  }
+  .badge-amber {
+    @apply text-[10px] uppercase tracking-wide font-bold
+           px-2.5 py-1 rounded-full
+           bg-amber-50 text-amber-700 ring-1 ring-amber-400/30;
+  }
+
+  .form-card {
+    @apply bg-white rounded-3xl border border-stone-200/70
+           shadow-lg shadow-slate-200/60 p-8 sm:p-10
+           relative overflow-hidden;
+  }
+  .form-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1.5
+           bg-gradient-to-r from-prime-400 to-prime-600;
+  }
+}
