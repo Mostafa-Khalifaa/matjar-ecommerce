@@ -1,6 +1,6 @@
 # Matjar (متجر) - Premium Ecommerce Platform
 
-![Matjar Preview](public/image.png)
+![Matjar Preview](public/)
 
 A modern, fully responsive, and bilingual (English & Arabic) ecommerce front-end application built with React. This project demonstrates a complete shopping flow with advanced state management, product filtering, and a sleek user interface using Tailwind CSS.
 
